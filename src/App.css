@@ -7,6 +7,10 @@
   .logo-enduran-text {
     font-size: 1.1rem;
     margin-right: 10px;
+    color: #2b4956 !important;
+    display: block !important;
+    z-index: 130;
+    background: none !important;
   }
   .menu-toggle {
     display: block;
@@ -18,7 +22,7 @@
     z-index: 120;
   }
   .nav-enduran {
-    display: none;
+    display: none !important;
     position: fixed;
     top: 56px;
     left: 0;
@@ -33,7 +37,7 @@
     transition: transform 0.2s;
   }
   .nav-enduran.open {
-    display: flex;
+    display: flex !important;
   }
   .nav-enduran ul {
     flex-direction: column;
