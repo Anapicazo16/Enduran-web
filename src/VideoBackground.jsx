@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
 import videoInicio from './assets/video_inicio_2.mp4';
-
-
-export default function VideoBackground() {
-  const [loaded, setLoaded] = useState(false);
-  return (
-    <>
       <video
         src={videoInicio}
         className="welcome-bg-video"
@@ -19,7 +13,15 @@ export default function VideoBackground() {
           position: 'absolute',
           top: 0,
           left: 0,
-          width: '100%',
+          width: '100vw',
+          height: '100%',
+          objectFit: window.innerWidth <= 600 ? 'contain' : 'cover',
+          background: '#000',
+          zIndex: 0,
+          display: loaded ? 'block' : 'none',
+          maxHeight: window.innerWidth <= 600 ? '56vw' : '100%',
+        }}
+      />
           height: '100%',
           objectFit: 'cover',
           zIndex: 0,
