@@ -204,7 +204,7 @@ export default function Home() {
         </section>
 
         {/* Separate section for 'Todo Incluido en la Cuota' roadmap */}
-        <section style={{ margin: '80px 0 120px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'none' }}>
+        <section className="roadmap-section" style={{ margin: '80px 0 120px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'none' }}>
           <h2 style={{ textAlign: 'center', fontWeight: 700, letterSpacing: 2, color: '#222', marginBottom: 48, fontSize: 22, textTransform: 'uppercase' }}>
             TODO INCLUIDO EN LA CUOTA
           </h2>
