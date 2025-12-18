@@ -33,14 +33,19 @@ import bydLogo from './assets/brands/logo_byd.png';
 
 export default function Home() {
   const [loginOpen, setLoginOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
       <UserLoginModal open={loginOpen} onClose={() => setLoginOpen(false)} logo={logoEnduran} />
       <div className="main-bg snap-container">
         <header className="header-enduran">
           <Link to="/" className="logo-enduran-text" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>ENDURAN</Link>
-          <nav className="nav-enduran">
-            <ul>
+          {/* Botón hamburguesa solo visible en móvil */}
+          <button className="menu-toggle" onClick={() => setMenuOpen(m => !m)} aria-label="Abrir menú">
+            <span style={{fontSize:'2rem',lineHeight:1}}>☰</span>
+          </button>
+          <nav className={`nav-enduran${menuOpen ? ' open' : ''}`}>
+            <ul onClick={() => setMenuOpen(false)}>
               <li className="nav-item nav-dropdown">
                 <Link to="/nuestroscoches">Nuestros coches</Link>
                 <div className="dropdown-menu">
@@ -88,7 +93,7 @@ export default function Home() {
             <div className="header-icons">
               <a href="mailto:info@enduran.com" className="header-icon" title="Email">✉️</a>
               <a href="tel:+34123456789" className="header-icon" title="Teléfono">📞</a>
-              <span className="header-icon" title="Usuario" style={{cursor:'pointer'}} onClick={() => setLoginOpen(true)}>👤</span>
+              <span className="header-icon" title="Usuario" style={{cursor:'pointer'}} onClick={e => {e.stopPropagation(); setLoginOpen(true);}}>👤</span>
             </div>
           </nav>
         </header>
