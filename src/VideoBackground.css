@@ -1,0 +1,19 @@
+.welcome-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  background: #000;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .welcome-bg-video {
+    object-fit: contain;
+    max-height: 56vw;
+    background: #000;
+  }
+}

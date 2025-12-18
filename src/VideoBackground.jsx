@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import videoInicio from './assets/video_inicio_2.mp4';
+import './VideoBackground.css';
       <video
         src={videoInicio}
         className="welcome-bg-video"
@@ -9,18 +10,7 @@ import videoInicio from './assets/video_inicio_2.mp4';
         playsInline
         preload="none"
         onCanPlayThrough={() => setLoaded(true)}
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          height: '100%',
-          objectFit: window.innerWidth <= 600 ? 'contain' : 'cover',
-          background: '#000',
-          zIndex: 0,
-          display: loaded ? 'block' : 'none',
-          maxHeight: window.innerWidth <= 600 ? '56vw' : '100%',
-        }}
+        style={{ display: loaded ? 'block' : 'none' }}
       />
           height: '100%',
           objectFit: 'cover',
