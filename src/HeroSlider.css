@@ -1,0 +1,129 @@
+.hero-slider-section {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.hero-swiper {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.hero-slider-bg {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slider-content {
+  width: 100vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  min-height: 100vh;
+  height: 100vh;
+}
+
+.hero-slider-title {
+  color: #fff;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-left: 60px;
+  margin-right: 40px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.hero-offer-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(44,73,86,0.10);
+  padding: 1.2rem 2.2rem 1.5rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 260px;
+  max-width: 320px;
+  margin-right: 32px;
+}
+.hero-offer-desc {
+  font-size: 1.05rem;
+  color: #4e7c7b;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.hero-offer-model {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2b4956;
+  margin-bottom: 0.5rem;
+}
+.hero-offer-price {
+  font-size: 1.2rem;
+  color: #1ec6d9;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+}
+.hero-offer-old {
+  color: #888;
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+.hero-offer-btn {
+  background: #1ee6d9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+.hero-offer-btn:hover {
+  background: #0f3c5c;
+}
+.hero-offer-img {
+  height: 220px;
+  margin-left: 48px;
+  margin-right: 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(44,73,86,0.10);
+  background: #fff;
+}
+
+@media (max-width: 900px) {
+  .hero-slider-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+  }
+  .hero-slider-title {
+    margin: 24px 0 12px 0;
+    font-size: 2rem;
+  }
+  .hero-offer-img {
+    margin: 0;
+    height: 160px;
+  }
+}

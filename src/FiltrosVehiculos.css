@@ -1,0 +1,70 @@
+.filtros-vehiculos {
+  width: 260px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #0a23421a;
+  padding: 18px 0 18px 0;
+  margin-left: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: sticky;
+  top: 110px;
+}
+.filtro-item {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 0 18px;
+}
+.filtro-item:last-child {
+  border-bottom: none;
+}
+.filtro-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.13rem;
+  font-weight: 700;
+  color: #16232e;
+  padding: 16px 0;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.filtro-btn:hover {
+  background: #f5fafd;
+}
+.filtro-icon {
+  font-size: 1.35em;
+  margin-right: 12px;
+}
+.filtro-label {
+  flex: 1;
+  text-align: left;
+}
+.filtro-arrow {
+  font-size: 1.1em;
+  margin-left: 8px;
+  transition: transform 0.2s;
+}
+.filtro-arrow.open {
+  transform: rotate(180deg);
+}
+.filtro-opciones {
+  background: #f5fafd;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  margin-top: -6px;
+  padding: 10px 12px 10px 32px;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #2b4956;
+}
+.filtro-opcion {
+  margin-bottom: 6px;
+}
+.filtro-opcion:last-child {
+  margin-bottom: 0;
+}

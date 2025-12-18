@@ -1,0 +1,138 @@
+.user-modal-register-content {
+  min-width: 340px;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 2.7rem 2.7rem 2.7rem 2.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 40px rgba(44,73,86,0.18);
+  position: relative;
+}
+.user-modal-register-header {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 2.1rem;
+  width: 100%;
+  justify-content: center;
+}
+.user-modal-register-header button {
+  background: #f7fafd;
+  color: #0f3c5c;
+  border: 1.5px solid #dbe6e6;
+  border-radius: 10px;
+  padding: 0.8rem 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  box-shadow: 0 1px 4px rgba(44,73,86,0.07);
+  letter-spacing: 0.01em;
+}
+.user-modal-register-header button.active,
+.user-modal-register-header button:hover {
+  background: #0f3c5c;
+  color: #fff;
+  border-color: #0f3c5c;
+  box-shadow: 0 4px 16px rgba(44,73,86,0.13);
+}
+.user-modal-register-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.user-modal-register-form .user-modal-label {
+  font-size: 1.09rem;
+  color: #2d3b3a;
+  font-weight: 500;
+  gap: 0.3rem;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.01em;
+}
+.user-modal-register-form input {
+  padding: 0.8rem 1.1rem;
+  border: 1.5px solid #e3e9ee;
+  border-radius: 10px;
+  font-size: 1.11rem;
+  margin-top: 0.2rem;
+  background: #f7fafd;
+  transition: border 0.18s, box-shadow 0.18s;
+  box-shadow: 0 1px 4px rgba(44,73,86,0.04);
+}
+.user-modal-register-form input:focus {
+  border: 1.5px solid #0f3c5c;
+  outline: none;
+  box-shadow: 0 2px 12px rgba(44,73,86,0.10);
+}
+.user-modal-register-form .user-modal-login-btn {
+  margin-top: 1.7rem;
+  font-size: 1.18rem;
+  font-weight: 800;
+  border-radius: 10px;
+  padding: 1.1rem 0;
+  background: #0f3c5c;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.18s;
+  width: 100%;
+  letter-spacing: 0.01em;
+  box-shadow: 0 2px 8px rgba(44,73,86,0.10);
+}
+.user-modal-register-form .user-modal-login-btn:hover {
+  background: #07213a;
+}
+.user-modal-register-checkboxes {
+  margin: 1.3rem 0 0.2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.user-modal-register-checkboxes label {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.01rem;
+  color: #2d3b3a;
+  font-weight: 500;
+  gap: 0.5rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.user-modal-register-checkboxes input[type="checkbox"] {
+  accent-color: #0f3c5c;
+  width: 1.1em;
+  height: 1.1em;
+  margin-top: 0.18em;
+}
+.user-modal-register-checkboxes a {
+  color: #0f3c5c;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.18s;
+}
+.user-modal-register-checkboxes a:hover {
+  color: #07213a;
+}
+@media (max-width: 600px) {
+  .user-modal-register-content {
+    min-width: 0;
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+    border-radius: 12px;
+  }
+  .user-modal-register-header button {
+    padding: 0.7rem 1.1rem;
+    font-size: 1rem;
+  }
+  .user-modal-register-form input {
+    font-size: 1rem;
+    padding: 0.7rem 0.7rem;
+  }
+  .user-modal-register-form .user-modal-login-btn {
+    font-size: 1.05rem;
+    padding: 0.8rem 0;
+  }
+}
