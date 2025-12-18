@@ -8,10 +8,11 @@
   .hero-offer-card {
     margin-right: 0;
     margin-bottom: 1.5rem;
-    width: 90vw;
-    max-width: 98vw;
+    width: 80vw;
+    max-width: 88vw;
     min-width: 0;
     align-items: center;
+    padding: 0.7rem 0.7rem 1rem 0.7rem;
   }
   .hero-offer-img {
     display: block;
@@ -20,8 +21,6 @@
     max-width: 90vw;
     min-width: 0;
   }
-}
-@media (max-width: 700px) {
   .hero-slider-section,
   .hero-swiper,
   .hero-slider-bg,
@@ -37,11 +36,6 @@
     font-size: 1.3rem;
     margin-left: 10px;
     margin-right: 10px;
-  }
-  .hero-offer-card {
-    padding: 0.7rem 1rem 1rem 1rem;
-    min-width: 0;
-    max-width: 95vw;
   }
 }
 .hero-slider-section {
