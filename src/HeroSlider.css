@@ -1,4 +1,27 @@
 @media (max-width: 700px) {
+  .hero-slider-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 420px;
+  }
+  .hero-offer-card {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+    width: 90vw;
+    max-width: 98vw;
+    min-width: 0;
+    align-items: center;
+  }
+  .hero-offer-img {
+    display: block;
+    margin: 2.2rem auto 0 auto;
+    height: 120px;
+    max-width: 90vw;
+    min-width: 0;
+  }
+}
+@media (max-width: 700px) {
   .hero-slider-section,
   .hero-swiper,
   .hero-slider-bg,
