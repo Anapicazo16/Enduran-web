@@ -1,3 +1,33 @@
+@media (max-width: 900px) {
+  .filtros-vehiculos {
+    width: 100%;
+    margin-left: 0;
+    position: static;
+    top: auto;
+    flex-direction: row;
+    gap: 8px;
+    padding: 10px 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .filtros-vehiculos {
+    flex-direction: column;
+    width: 100vw;
+    padding: 8px 2vw;
+    gap: 2px;
+    box-sizing: border-box;
+  }
+  .filtro-item {
+    padding: 0 8px;
+  }
+  .filtro-btn {
+    font-size: 1em;
+    padding: 10px 0;
+  }
+}
 .filtros-vehiculos {
   width: 260px;
   background: #fff;

@@ -1,3 +1,28 @@
+@media (max-width: 700px) {
+  .offers-section {
+    padding: 1rem 2vw 1rem 2vw;
+  }
+  .offers-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem 0;
+  }
+  .offer-card {
+    max-width: 98vw;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .offers-title {
+    font-size: 1.1rem;
+  }
+  .offers-section {
+    padding: 0.5rem 1vw 0.5rem 1vw;
+  }
+  .offers-grid {
+    gap: 0.7rem 0;
+  }
+}
 .offers-section {
   max-width: 1400px;
   width: 100%;

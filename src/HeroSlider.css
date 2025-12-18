@@ -1,3 +1,26 @@
+@media (max-width: 700px) {
+  .hero-slider-section,
+  .hero-swiper,
+  .hero-slider-bg,
+  .hero-slider-content {
+    width: 100vw;
+    min-width: 100vw;
+    height: 60vh;
+    min-height: 60vh;
+    padding: 0;
+    margin: 0;
+  }
+  .hero-slider-title {
+    font-size: 1.3rem;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .hero-offer-card {
+    padding: 0.7rem 1rem 1rem 1rem;
+    min-width: 0;
+    max-width: 95vw;
+  }
+}
 .hero-slider-section {
   width: 100vw;
   height: 100vh;

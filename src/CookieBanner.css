@@ -1,3 +1,42 @@
+@media (max-width: 700px) {
+  .cookie-banner-fullcard {
+    padding: 1.5rem 1rem 1.2rem 1rem;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    max-width: 98vw;
+    width: 98vw;
+  }
+  .cookie-title-full {
+    font-size: 1.3rem;
+  }
+  .cookie-text-full {
+    font-size: 1rem;
+  }
+  .cookie-btn-group-full {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .cookie-btn-full {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cookie-banner-fullcard {
+    padding: 1rem 0.5rem 0.7rem 0.5rem;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    max-width: 99vw;
+    width: 99vw;
+  }
+  .cookie-title-full {
+    font-size: 1.1rem;
+  }
+  .cookie-text-full {
+    font-size: 0.95rem;
+  }
+}
 .cookie-banner-fullcard {
   background: #fff;
   border-radius: 18px;

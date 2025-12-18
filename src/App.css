@@ -1,3 +1,21 @@
+@media (max-width: 600px) {
+  .snap-section {
+    min-height: 100vh;
+    height: auto;
+    padding: 0 0.5em;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .welcome-section main {
+    padding: 0 0.5em;
+  }
+  .slider-section {
+    padding: 0;
+  }
+  .offers-section-full {
+    padding: 0 0 2em 0;
+  }
+}
 .snap-container {
   scroll-snap-type: y mandatory;
   overflow-y: visible;
