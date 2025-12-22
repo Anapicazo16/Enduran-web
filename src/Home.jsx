@@ -213,8 +213,25 @@ export default function Home() {
           <h2 style={{ textAlign: 'center', fontWeight: 700, letterSpacing: 2, color: '#222', marginBottom: 48, fontSize: 22, textTransform: 'uppercase' }}>
             TODO INCLUIDO EN LA CUOTA
           </h2>
-          <div style={{ position: 'relative', width: '100%', maxWidth: 900, minWidth: 320, margin: '0 auto', height: 900, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <svg width="100%" height="900" viewBox="0 0 900 900" style={{ position: 'absolute', left: 0, top: 0, zIndex: 1, pointerEvents: 'none' }}>
+          <div
+            style={{
+              position: 'relative',
+              width: '100vw',
+              maxWidth: '100vw',
+              minWidth: 320,
+              margin: '0 auto',
+              height: window.innerWidth <= 700 ? 1200 : 900,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <svg
+              width={window.innerWidth <= 700 ? window.innerWidth : 900}
+              height={window.innerWidth <= 700 ? 1200 : 900}
+              viewBox={`0 0 ${window.innerWidth <= 700 ? window.innerWidth : 900} ${window.innerWidth <= 700 ? 1200 : 900}`}
+              style={{ position: 'absolute', left: 0, top: 0, zIndex: 1, pointerEvents: 'none' }}
+            >
               <defs>
                 <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%" stopColor="#444" />
@@ -236,11 +253,14 @@ export default function Home() {
                       'Conductor adicional gratis',
                     ];
                     const n = roadmapTexts.length;
-                    const centerX = 450;
-                    const spread = 260;
+                    const isMobile = window.innerWidth <= 700;
+                    const svgWidth = isMobile ? window.innerWidth : 900;
+                    const svgHeight = isMobile ? 1200 : 900;
+                    const centerX = svgWidth / 2;
+                    const spread = isMobile ? 0 : 260;
                     const points = Array.from({ length: n }, (_, i) => {
-                      const y = 80 + i * ((740) / (n - 1));
-                      const x = centerX + (i % 2 === 0 ? -spread : spread);
+                      const y = 80 + i * ((svgHeight - 160) / (n - 1));
+                      const x = centerX + (isMobile ? 0 : (i % 2 === 0 ? -spread : spread));
                       return [x, y];
                     });
                     // Línea central animada
@@ -266,59 +286,48 @@ export default function Home() {
                           <g key={i}>
                             <circle cx={x} cy={y} r="0">
                               <animate attributeName="r" from="0" to="26" dur="0.5s" begin={`${i * 0.13 + 0.2}s`} fill="freeze" />
-                            </circle>
-                            <circle cx={x} cy={y} r="22" fill="#fff" stroke="#1e90ff" strokeWidth="5" />
-                          </g>
-                        ))}
-                      </>
-                    );
-                  })()}
-                </svg>
-                {/* Textos animados */}
-                {(() => {
-                  const roadmapTexts = [
-                    'Coche nuevo a estrenar',
-                    'Seguro a todo riesgo',
-                    'Asistencia en la carretera',
-                    '15.000 km al año + 1.000 km de regalo',
-                    'Coche de sustitución',
-                    'Impuestos',
-                    'Neumáticos',
-                    'Averías y reparaciones',
-                    'Entrega a domicilio gratis',
-                    'Mantenimiento',
-                    'Conductor adicional gratis',
-                  ];
-                  const n = roadmapTexts.length;
-                  const centerX = 450;
-                  const spread = 260;
-                  const isMobile = window.innerWidth <= 700;
-                  return roadmapTexts.map((text, i) => {
-                    const y = 80 + i * ((740) / (n - 1));
-                    let x, leftOffset, textAlign, minWidth, maxWidth;
-                    if (isMobile) {
-                      x = centerX;
-                      leftOffset = -130;
-                      textAlign = 'center';
-                      minWidth = '60vw';
-                      maxWidth = '80vw';
-                    } else {
-                      x = centerX + (i % 2 === 0 ? -spread : spread);
-                      leftOffset = i % 2 === 0 ? -390 : 40;
-                      textAlign = i % 2 === 0 ? 'right' : 'left';
-                      minWidth = 210;
-                      maxWidth = 260;
-                    }
-                    return (
-                      <motion.div
-                        key={text}
-                        initial={{ opacity: 0, x: isMobile ? 0 : (i % 2 === 0 ? -60 : 60) }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.7, delay: i * 0.13 + 0.2 }}
-                        viewport={{ once: true }}
-                        style={{
-                          position: 'absolute',
-                          left: x + leftOffset,
+                            return roadmapTexts.map((text, i) => {
+                              const isMobile = window.innerWidth <= 700;
+                              const svgWidth = isMobile ? window.innerWidth : 900;
+                              const svgHeight = isMobile ? 1200 : 900;
+                              const centerX = svgWidth / 2;
+                              const y = 80 + i * ((svgHeight - 160) / (n - 1));
+                              const x = centerX;
+                              return (
+                                <motion.div
+                                  key={text}
+                                  initial={{ opacity: 0, x: 0 }}
+                                  whileInView={{ opacity: 1, x: 0 }}
+                                  transition={{ duration: 0.7, delay: i * 0.13 + 0.2 }}
+                                  viewport={{ once: true }}
+                                  style={{
+                                    position: 'absolute',
+                                    left: x - (isMobile ? window.innerWidth * 0.4 : 130),
+                                    top: y + (isMobile ? 30 : -18),
+                                    zIndex: 2,
+                                    minWidth: isMobile ? '80vw' : 210,
+                                    maxWidth: isMobile ? '90vw' : 260,
+                                    color: '#0a2342',
+                                    fontWeight: 600,
+                                    fontSize: 18,
+                                    textAlign: 'center',
+                                    background: 'linear-gradient(120deg, #fafdff 60%, #e6f7fa 100%)',
+                                    borderRadius: 18,
+                                    padding: '0.9em 1.3em',
+                                    boxShadow: '0 4px 24px #1e90ff22',
+                                    border: '1.5px solid #b6e0f7',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: 12,
+                                    letterSpacing: 0.2,
+                                    fontFamily: 'Segoe UI',
+                                  }}
+                                >
+                                  <span style={{ fontSize: 22, marginRight: 8, color: '#1e90ff', opacity: 0.8 }}>✔️</span>
+                                  <span>{text}</span>
+                                </motion.div>
+                              );
+                            });
                           top: y - 18,
                           zIndex: 2,
                           minWidth,
