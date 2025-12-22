@@ -292,15 +292,27 @@ export default function Home() {
                   const n = roadmapTexts.length;
                   const centerX = 450;
                   const spread = 260;
+                  const isMobile = window.innerWidth <= 700;
                   return roadmapTexts.map((text, i) => {
                     const y = 80 + i * ((740) / (n - 1));
-                    const x = centerX + (i % 2 === 0 ? -spread : spread);
-                    // Desplazamiento extra para los de la izquierda
-                    const leftOffset = i % 2 === 0 ? -390 : 40;
+                    let x, leftOffset, textAlign, minWidth, maxWidth;
+                    if (isMobile) {
+                      x = centerX;
+                      leftOffset = -130;
+                      textAlign = 'center';
+                      minWidth = '60vw';
+                      maxWidth = '80vw';
+                    } else {
+                      x = centerX + (i % 2 === 0 ? -spread : spread);
+                      leftOffset = i % 2 === 0 ? -390 : 40;
+                      textAlign = i % 2 === 0 ? 'right' : 'left';
+                      minWidth = 210;
+                      maxWidth = 260;
+                    }
                     return (
                       <motion.div
                         key={text}
-                        initial={{ opacity: 0, x: i % 2 === 0 ? -60 : 60 }}
+                        initial={{ opacity: 0, x: isMobile ? 0 : (i % 2 === 0 ? -60 : 60) }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.7, delay: i * 0.13 + 0.2 }}
                         viewport={{ once: true }}
@@ -309,12 +321,12 @@ export default function Home() {
                           left: x + leftOffset,
                           top: y - 18,
                           zIndex: 2,
-                          minWidth: 210,
-                          maxWidth: 260,
+                          minWidth,
+                          maxWidth,
                           color: '#0a2342',
                           fontWeight: 600,
                           fontSize: 18,
-                          textAlign: i % 2 === 0 ? 'right' : 'left',
+                          textAlign,
                           background: 'linear-gradient(120deg, #fafdff 60%, #e6f7fa 100%)',
                           borderRadius: 18,
                           padding: '0.9em 1.3em',
