@@ -202,9 +202,11 @@
   }
   .roadmap-section .motion-div {
     min-width: 120px !important;
-    max-width: 90vw !important;
-    font-size: 0.95rem !important;
-    padding: 0.5em 0.7em !important;
+    max-width: 98vw !important;
+    font-size: 1rem !important;
+    padding: 0.7em 1em !important;
+    word-break: break-word;
+    white-space: normal;
   }
 }
 @media (max-width: 600px) {
