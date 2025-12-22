@@ -163,6 +163,9 @@
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+  .hero-slider-section {
+    margin-bottom: 7.5rem !important;
+  }
   .renting-cards-section > div {
     flex-direction: column !important;
     gap: 1.2rem !important;
